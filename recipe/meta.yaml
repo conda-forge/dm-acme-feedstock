@@ -1,5 +1,5 @@
 {% set name = "dm-acme" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: d104ea738772cfb11c461c7435eb55b1ae0d32ecb18b6394cadd35dc04fc0705
+    sha256: af74f8af26b72687daf09a52604edd3b977fc21df4cd8ef70080906517640b31
 
 build:
   number: 0
