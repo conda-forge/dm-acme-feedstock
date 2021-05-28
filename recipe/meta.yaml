@@ -27,7 +27,6 @@ requirements:
     - numpy
     - pillow
     - python >=3.6
-    - wrapt
 
 test:
   imports:
