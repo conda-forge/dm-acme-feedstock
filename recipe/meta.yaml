@@ -27,7 +27,8 @@ requirements:
     - numpy
     - pillow
     - python >=3.6
-
+    - typing-extensions
+    
 test:
   imports:
     - acme
