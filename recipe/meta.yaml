@@ -1,5 +1,5 @@
 {% set name = "dm-acme" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 21abc399be6da088c49c47d7f60fa9fc33a19116ea7c317bc91c5fbaaedea531
+    sha256: f8cd4db6eb2e579f743f18c431351c4407526f6d4fec95bec9dbc0664048fd20
 
 build:
   number: 0
@@ -27,7 +27,8 @@ requirements:
     - numpy
     - pillow
     - python >=3.6
-
+    - typing-extensions
+    
 test:
   imports:
     - acme
