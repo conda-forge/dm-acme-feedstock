@@ -41,6 +41,7 @@ about:
   license: Apache-2.0
   license_file: LICENSE
   dev_url: https://github.com/deepmind/acme
+  doc_url: https://dm-acme.readthedocs.io
 
 extra:
   recipe-maintainers:
