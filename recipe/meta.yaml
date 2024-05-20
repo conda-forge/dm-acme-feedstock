@@ -1,20 +1,17 @@
-{% set name = "dm-acme" %}
-{% set version = "0.2.4" %}
-
+{% set version = "0.4.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: dm-acme
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 41097bc7c8d9201ecf2eea2afd9d961e22cee0bfaa0b826697b522d752318ede
+  url: https://pypi.io/packages/source/d/dm-acme/dm-acme-{{ version }}.tar.gz
+  sha256: 4b43e7738914cdf0134935485a5d9255189e59f73d442bef057c94279d7691ff
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
-
 
 requirements:
   host:
@@ -44,6 +41,7 @@ about:
   license: Apache-2.0
   license_file: LICENSE
   dev_url: https://github.com/deepmind/acme
+  doc_url: https://dm-acme.readthedocs.io
 
 extra:
   recipe-maintainers:
