@@ -11,6 +11,8 @@ Summary: A Python library for Reinforcement Learning.
 
 Development: https://github.com/deepmind/acme
 
+Documentation: https://dm-acme.readthedocs.io
+
 Current build status
 ====================
 
