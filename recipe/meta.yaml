@@ -1,25 +1,24 @@
-{% set name = "dm-acme" %}
 {% set version = "0.2.4" %}
 
-
 package:
-  name: {{ name|lower }}
+  name: dm-acme
   version: {{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/d/dm-acme/dm-acme-{{ version }}.tar.gz
     sha256: 41097bc7c8d9201ecf2eea2afd9d961e22cee0bfaa0b826697b522d752318ede
 
 build:
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
   noarch: python
-
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - absl-py
     - dm-env
@@ -30,14 +29,14 @@ requirements:
     - typing-extensions
 
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
   imports:
     - acme
     - acme.adders
   commands:
     - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/dm-acme
