@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: 41097bc7c8d9201ecf2eea2afd9d961e22cee0bfaa0b826697b522d752318ede
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   noarch: python
 
@@ -19,14 +19,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - absl-py
     - dm-env
     - dm-tree
     - numpy
     - pillow
-    - python >=3.6
+    - python >={{ python_min }}
     - typing-extensions
 
 test:
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/dm-acme
