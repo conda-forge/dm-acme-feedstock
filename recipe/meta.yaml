@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/d/dm-acme/dm-acme-{{ version }}.tar.gz
-    sha256: 41097bc7c8d9201ecf2eea2afd9d961e22cee0bfaa0b826697b522d752318ede
+  url: https://pypi.org/packages/source/d/dm-acme/dm-acme-{{ version }}.tar.gz
+  sha256: 41097bc7c8d9201ecf2eea2afd9d961e22cee0bfaa0b826697b522d752318ede
 
 build:
   number: 1
